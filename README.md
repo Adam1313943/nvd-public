@@ -22,7 +22,7 @@
 
 ## 三個賣點
 
-- **🎁 開箱即用,零相依** — 內建 yt-dlp / ffmpeg / Chrome for Testing,雙擊安裝就能用
+- **🎁 開箱即用** — 內建 yt-dlp / ffmpeg,不用裝 Homebrew 或敲指令
 - **🎯 智慧偵測串流** — 自動偵測網頁影片串流,連 JavaScript-only 站也找得到 manifest
 - **🔄 穩定的長片下載** — 處理多種 HLS 變體與會話過期,長影片下載中途不中斷
 
@@ -30,7 +30,8 @@
 
 - macOS 14.0 Sonoma 以上
 - Apple Silicon (M1 / M2 / M3 / M4)
-- 約 600 MB 儲存空間
+- 約 250 MB 儲存空間
+- **智慧偵測功能需要**:Chrome / Brave / Edge / Arc / Vivaldi 任一個(多數 Mac 已安裝)。基本 yt-dlp 支援的站不需要
 
 ## 安裝
 
@@ -80,7 +81,6 @@ nvd 內建以下開源元件供下載引擎使用:
 
 - [yt-dlp](https://github.com/yt-dlp/yt-dlp) — Unlicense
 - [ffmpeg](https://ffmpeg.org/) — LGPL/GPL
-- [Chrome for Testing](https://googlechromelabs.github.io/chrome-for-testing/) — BSD
 - [Sparkle](https://sparkle-project.org/) — MIT
 
 ## 著作權聲明

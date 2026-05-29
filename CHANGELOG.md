@@ -9,7 +9,7 @@
 - **License + Pro 升級系統**:支援 NVD-XXXX-XXXX-XXXX 授權碼啟用,使用 Keychain 安全儲存
   - 機器綁定(同一份授權可在 3 台 Mac 啟用)
   - 7 天離線寬限期
-- **內建 Chrome for Testing**:零相依運作,不需要先安裝 Chrome
+- **系統 Chrome 偵測**:啟動時偵測 Chrome / Brave / Edge / Arc / Vivaldi,沒裝會在主畫面顯示提示橫幅引導下載
 - **歡迎導引**:首次啟動 4 頁 onboarding,介紹工具與功能
 - **錯誤訊息友善化**:16 種常見錯誤類型對應友善提示,可展開技術細節
 - **免費版限制**:影片長度上限 10 分鐘 / 單次下載上限 100 MB
