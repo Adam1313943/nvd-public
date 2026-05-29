@@ -7,10 +7,6 @@
 </p>
 
 <p align="center">
-  <img src="docs/screenshots/hero.png" alt="nvd hero" width="720">
-</p>
-
-<p align="center">
   <a href="https://www.momosoft.one/nvd">公式サイト</a> ·
   <a href="https://github.com/Adam1313943/nvd-public/releases/latest">最新版をダウンロード</a> ·
   <a href="https://www.momosoft.one/Privacy.html">プライバシーポリシー</a>
