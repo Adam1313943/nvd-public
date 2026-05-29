@@ -1,59 +1,63 @@
 # Changelog
 
-所有重要的版本變更記錄在這個檔案。
+<p align="right">
+  <strong>English</strong> · <a href="./CHANGELOG.zh-Hant.md">繁體中文</a> · <a href="./CHANGELOG.zh-Hans.md">简体中文</a> · <a href="./CHANGELOG.ja.md">日本語</a>
+</p>
+
+All notable changes to this project are documented in this file.
 
 ## [0.3.5] - 2026-05-29
 
-### 新增
+### Added
 
-- **License + Pro 升級系統**:支援 NVD-XXXX-XXXX-XXXX 授權碼啟用,使用 Keychain 安全儲存
-  - 機器綁定(同一份授權可在 3 台 Mac 啟用)
-  - 7 天離線寬限期
-- **系統 Chrome 偵測**:啟動時偵測 Chrome / Brave / Edge / Arc / Vivaldi,沒裝會在主畫面顯示提示橫幅引導下載
-- **歡迎導引**:首次啟動 4 頁 onboarding,介紹工具與功能
-- **錯誤訊息友善化**:16 種常見錯誤類型對應友善提示,可展開技術細節
-- **免費版限制**:影片長度上限 10 分鐘 / 單次下載上限 100 MB
-- **設定 → 授權**:可看到目前授權狀態、停用、升級入口
+- **License + Pro upgrade system**: Activate with `NVD-XXXX-XXXX-XXXX` license key, stored securely in Keychain
+  - Machine binding (one license up to 3 Macs)
+  - 7-day offline grace period
+- **First-launch welcome guide**: 4-page onboarding introducing tools and features
+- **System Chrome detection**: detects Chrome / Brave / Edge / Arc / Vivaldi at launch; shows orange banner with download CTA if none found
+- **Friendly error messages**: 17 common error types mapped to actionable hints, with expandable technical details
+- **Free tier limits**: video duration ≤ 10 minutes / per-download size ≤ 100 MB
+- **Settings → License**: see current license status, deactivate, or open upgrade flow
 
-### 改進
+### Improved
 
-- **UI polish**:JobsView 加 hover lift 效果、狀態 chip 加 SF Symbol 動態 icon
-- **SubmitView 重設計**:hero header + 加大 URL 輸入框 + 按鈕層次重排
-- **Empty states**:任務 / 檔案頁沒內容時顯示 ContentUnavailableView
+- **UI polish**: JobsView hover lift effect, status chip with animated SF Symbols
+- **SubmitView redesign**: hero header + enlarged URL input + Pro chip
+- **Empty states**: Jobs / Files screens show ContentUnavailableView guidance when empty
 
-### 移除
+### Removed
 
-- **設定 → 區段剪輯**:這個全域設定殘留值會偷偷砍下載長度,移到 ClipPickerWindow 內當下決定
+- **Settings → Clip range**: this global setting could silently truncate downloads, moved to ClipPickerWindow where the user picks the range explicitly
 
-### 修正
+### Fixed
 
-- 對 BunnyCDN 等短期 token 站的自動續期與重試邏輯
-- m3u8 stream-proxy 強制回 200 + 不轉發 Range,修正 AVPlayer 反覆 retry master 卡住問題
-- gzip 自動解 Content-Encoding
-- isAccessExpired 改 case-insensitive
+- Auto token refresh for short-lived signed URLs (BunnyCDN etc.)
+- m3u8 stream-proxy forces 200 + does not forward Range upstream, fixing AVPlayer repeatedly retrying master
+- Auto-decode `Content-Encoding: gzip`
+- `isAccessExpired` case-insensitive comparison
 
 ## [0.3.4] - 2026-05-27
 
-- 通用 token-refresh download retry(BunnyCDN shortcut + 通用 sequence-align fallback)
-- 移除設定內 sections 殘留值砍下載長度的 bug
+- Generic token-refresh download retry (BunnyCDN shortcut + generic sequence-align fallback)
+- Removed clip-section setting that silently truncated downloads
 
 ## [0.3.3] - 2026-05-26
 
-- HLS stream-proxy 多 candidate sniff + DVR 模式
-- 短期 token 自動續期
+- HLS stream-proxy with multi-candidate sniffing + DVR mode
+- Auto refresh for short-lived signed URLs
 
 ## [0.3.2] - 2026-05-26
 
-- Sniff fallback 給 PlayerWindow / ClipPickerWindow
+- Sniff fallback for PlayerWindow / ClipPickerWindow
 
 ## [0.3.1] - 2026-05-25
 
-- Collision-safe filename
-- 按鈕視覺改進
-- yt-dlp generic 加上 `--extractor-args generic:impersonate`
+- Collision-safe output filenames
+- Button visual improvements
+- `--extractor-args generic:impersonate` for yt-dlp generic extractor
 
 ## [0.3.0] - 2026-05-25
 
-- 進入 Tier 1-3 完整 SwiftUI 主畫面
-- Sparkle 自動更新整合
-- Apple Developer ID 簽署 + Notarize
+- Tier 1–3 complete SwiftUI main UI
+- Sparkle auto-update integration
+- Apple Developer ID code signing + Notarize
