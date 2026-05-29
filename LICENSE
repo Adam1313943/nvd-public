@@ -1,0 +1,39 @@
+Copyright (c) 2026 MomoSoft (https://www.momosoft.one)
+All rights reserved.
+
+This repository hosts the binary releases of nvd — a macOS video
+downloader. The binaries are provided for end-user download and
+installation only. Source code is not included in this repository.
+
+By downloading, installing, or using nvd, you agree to the following:
+
+1. Personal Use
+   You may install nvd on Macs you own or control. Free version is
+   provided as-is; Pro license is per-user, valid on up to 3 devices.
+
+2. License Key
+   Pro features unlock requires a valid license key obtained from
+   https://www.momosoft.one/nvd. Reselling, sharing, or generating
+   license keys is prohibited.
+
+3. Bundled Third-Party Components
+   nvd ships with the following open-source components used as the
+   download engine. Their respective licenses apply to those parts:
+
+   - yt-dlp        (Unlicense)
+   - ffmpeg        (LGPL / GPL)
+   - Chrome for Testing (BSD)
+   - Sparkle       (MIT)
+
+4. Disclaimer
+   nvd is a video downloader. Users are responsible for ensuring they
+   have the legal rights to download any content. The author makes no
+   warranties about lawfulness of any specific use.
+
+5. No Warranty
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+   EXPRESS OR IMPLIED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY
+   CLAIM, DAMAGES OR OTHER LIABILITY ARISING FROM USE OF THE SOFTWARE.
+
+Privacy Policy: https://www.momosoft.one/Privacy.html
+Support:        support@momosoft.one
