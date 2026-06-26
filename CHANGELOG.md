@@ -6,6 +6,35 @@
 
 All notable changes to this project are documented in this file.
 
+## [0.3.9] - 2026-06-24
+
+### Added
+
+- **Pause / Resume** for native HLS downloads — pause keeping progress, then continue from where you left off
+- **Finish early & save** — when a download stalls or you don't want to wait, merge the already-downloaded part into a playable file
+- Anonymous usage stats to help diagnose failed downloads (opt-out in Settings)
+
+### Improved
+
+- Better stream detection and compatibility across more sites (parse m3u8 straight from page source for MacCMS-style players)
+
+## [0.3.6] - 2026-06-10
+
+### Added
+
+- **Subtitles**: pick specific subtitle languages; "all" now fetches only original subtitles to avoid throttling
+- **yt-dlp concurrent fragments** (default 4) — much faster long videos
+- Job list: **Clear finished**
+
+### Changed
+
+- **Free tier**: 7-day trial + 1080p quality cap (replaces the old 10-min / 100 MB limits); Pro unlocks 4K/8K, clip extraction, in-app playback
+
+### Fixed
+
+- Clip extraction: duration shown as full length, progress stuck at 0%, subtitles limited to English
+- Pro downloads from clip extraction wrongly treated as free-tier limited
+
 ## [0.3.5] - 2026-05-29
 
 ### Added
