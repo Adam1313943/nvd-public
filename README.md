@@ -1,6 +1,6 @@
 # nvd
 
-> Native video downloader for macOS — bundled tools, ready out of the box.
+> Video downloader for macOS & Windows — bundled tools, media library and AI subtitles. Ready out of the box.
 
 <p align="right">
   <strong>English</strong> · <a href="./README.zh-Hant.md">繁體中文</a> · <a href="./README.zh-Hans.md">简体中文</a> · <a href="./README.ja.md">日本語</a>
@@ -16,50 +16,46 @@
 
 ## What is nvd
 
-**nvd** is a native macOS video downloader. Turn any web video into a local file — no Homebrew, no yt-dlp setup, no terminal. Just double-click and go.
+**nvd** is a video downloader for **macOS and Windows**. Turn any web video into a local file — no Homebrew, no yt-dlp setup, no terminal. Just install and go.
 
 Works with **1,500+ video sites** including YouTube, Vimeo, Twitch, niconico, Bilibili, Twitter, Facebook, Instagram, TikTok and more.
 
-## Three key strengths
+## Key strengths
 
-- **🎁 Ready out of the box** — yt-dlp and ffmpeg bundled inside the app
+- **🎁 Ready out of the box** — yt-dlp, ffmpeg and a built-in stream sniffer bundled inside; no external browser or setup needed
 - **🎯 Smart stream detection** — finds m3u8 even on JavaScript-heavy pages
-- **🔄 Stable long-form downloads** — handles HLS variants and session refresh automatically
+- **📚 Media library** — organize downloads into sources, collections and playlists, with thumbnails
+- **💬 AI subtitles** — generate subtitles on-device with whisper, then translate to many languages
+- **▶️ Built-in player** — speed control, PiP, resume, and a subtitle overlay (size / position / drag to place)
 
 ## System Requirements
 
-- macOS 14.0 Sonoma or later
-- Apple Silicon (M1 / M2 / M3 / M4)
-- ~250 MB disk space
-- **Smart detection requires**: Chrome / Brave / Edge / Arc / Vivaldi (any one — most Macs already have one). Standard yt-dlp sites do not need this.
+- **macOS** 14.0 Sonoma or later, Apple Silicon (M1 / M2 / M3 / M4)
+- **Windows** 10 / 11, 64-bit
+- ~300 MB disk space (AI subtitle models download on demand)
 
 ## Install
 
-1. Download the latest `nvd-*.zip` from [Releases](https://github.com/Adam1313943/nvd-public/releases/latest)
-2. Unzip and drag `nvd.app` into `/Applications`
-3. Double-click to open — first launch shows a welcome guide
+- **macOS** — download `nvd-*-mac-arm64.zip` from [Releases](https://github.com/Adam1313943/nvd-public/releases/latest), unzip, and drag `nvd.app` into `/Applications`.
+- **Windows** — download `nvd-*-setup.exe` from [Releases](https://github.com/Adam1313943/nvd-public/releases/latest) and run the installer.
 
-On first launch, macOS Gatekeeper may show a download confirmation. Click "Open" to continue.
+First launch shows a welcome guide. macOS Gatekeeper / Windows SmartScreen may warn on first open — choose **Open** / **Run anyway**.
 
 ## Free vs Pro
 
-| Feature | Free | Pro |
-|---|---|---|
-| 1,500+ supported sites | ✅ | ✅ |
-| Resolution / subtitle / metadata / thumbnail embed | ✅ | ✅ |
-| Smart stream detection | ✅ | ✅ |
-| Browser cookies integration | ✅ | ✅ |
-| Menu Bar status / notifications | ✅ | ✅ |
-| Auto update | ✅ | ✅ |
-| Video duration limit | **10 minutes** | Unlimited |
-| Per-download size limit | **100 MB** | Unlimited |
-| Clip selection download | — | ✅ |
-| In-app preview playback | — | ✅ |
+**Free** includes a **7-day trial**. After the trial, downloading and subtitle transcription require Pro.
+
+| Feature | Free (7-day trial) | After trial | Pro |
+|---|---|---|---|
+| Download (1,500+ sites) | ✅ | Pro required | ✅ Unlimited |
+| Media library / built-in player | ✅ | ✅ | ✅ |
+| AI subtitles — transcription | ✅ | Pro required | ✅ Unlimited |
+| AI subtitles — translation | Pro required | Pro required | ✅ 5 videos / month |
 
 ## Upgrade to Pro
 
-- **Price**: NT$ 380 one-time (~USD $12)
-- **Devices**: One license activates up to 3 Macs (deactivate any anytime to free a slot)
+- **Price**: US$15 one-time
+- **Devices**: One license activates up to 3 devices (macOS / Windows); deactivate anytime to free a slot
 - **Updates**: 1 year of feature updates included, then 50% off renewal
 - **Refund**: 7-day no-questions-asked refund
 
@@ -69,19 +65,24 @@ After purchase you'll receive the license key within 1 minute by email. Open nvd
 
 ## Privacy
 
-nvd runs entirely on your Mac. **No telemetry, no analytics.** The only outbound connections:
-1. License verification on activation
-2. Sparkle update check (appcast.xml)
+nvd runs on your own machine. Outbound connections:
+
+1. License verification (on activation)
+2. Update check (`version.json`)
+3. Anonymous usage analytics — on by default, can be turned off in Settings
+4. Subtitle translation — only when you use it; sends the subtitle text to the translation service
 
 Full policy: [momosoft.one/Privacy.html](https://www.momosoft.one/Privacy.html)
 
 ## Bundled Open Source
 
-nvd ships with the following open-source download engine components:
+nvd ships with the following open-source components:
 
 - [yt-dlp](https://github.com/yt-dlp/yt-dlp) — Unlicense
 - [ffmpeg](https://ffmpeg.org/) — LGPL/GPL
-- [Sparkle](https://sparkle-project.org/) — MIT
+- [whisper.cpp](https://github.com/ggml-org/whisper.cpp) — MIT (AI subtitle transcription)
+- [Deno](https://deno.com/) — MIT (JavaScript runtime for some sites)
+- [Electron](https://www.electronjs.org/) / Chromium — MIT / BSD
 
 ## Copyright Notice
 

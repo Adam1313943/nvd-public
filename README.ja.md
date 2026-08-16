@@ -1,6 +1,6 @@
 # nvd
 
-> macOS 向け動画ダウンローダー。ツール内蔵、インストール後すぐに使えます。
+> macOS と Windows 向けの動画ダウンローダー。ツール内蔵・メディアライブラリ・AI 字幕、すぐに使えます。
 
 <p align="right">
   <a href="./README.md">English</a> · <a href="./README.zh-Hant.md">繁體中文</a> · <a href="./README.zh-Hans.md">简体中文</a> · <strong>日本語</strong>
@@ -9,91 +9,90 @@
 <p align="center">
   <a href="https://www.momosoft.one/nvd">公式サイト</a> ·
   <a href="https://github.com/Adam1313943/nvd-public/releases/latest">最新版をダウンロード</a> ·
-  <a href="https://www.momosoft.one/Privacy.html">プライバシーポリシー</a>
+  <a href="https://www.momosoft.one/Privacy.html">プライバシー</a>
 </p>
 
 ---
 
 ## nvd とは
 
-**nvd** は macOS ネイティブの動画ダウンローダーです。ウェブの動画をローカルファイルに変換 — Homebrew や yt-dlp のセットアップ不要、ターミナル操作不要。ダブルクリックで起動するだけです。
+**nvd** は **macOS と Windows** 向けの動画ダウンローダーです。Web 上の動画をローカルファイルに — Homebrew も yt-dlp のセットアップもターミナルも不要。インストールするだけで使えます。
 
-YouTube、Vimeo、Twitch、niconico、Bilibili、Twitter、Facebook、Instagram、TikTok など **1,500 以上の動画サイト** に対応しています。
+YouTube、Vimeo、Twitch、niconico、Bilibili、Twitter、Facebook、Instagram、TikTok など **1,500 以上の動画サイト**に対応。
 
-## 三つの強み
+## 主な特長
 
-- **🎁 すぐに使える** — yt-dlp / ffmpeg を内蔵。Homebrew のインストールやコマンド操作は不要
-- **🎯 スマートなストリーム検出** — JavaScript で動的に読み込まれるページでも m3u8 を自動検出
-- **🔄 安定した長尺ダウンロード** — 複数の HLS バリアントとセッション更新を自動処理し、長時間動画でも途中で止まらない
+- **🎁 すぐに使える** — yt-dlp / ffmpeg とストリーム検出エンジンを内蔵。別途ブラウザやセットアップは不要
+- **🎯 スマートなストリーム検出** — JavaScript 主体のページでも m3u8 を検出
+- **📚 メディアライブラリ** — ダウンロードをソース・コレクション・プレイリストで整理、サムネイル表示
+- **💬 AI 字幕** — ローカルの whisper で字幕を生成し、多言語へ翻訳
+- **▶️ 内蔵プレーヤー** — 速度・PiP・再開、字幕オーバーレイ（サイズ / 位置 / ドラッグ移動）
 
 ## 動作環境
 
-- macOS 14.0 Sonoma 以上
-- Apple Silicon (M1 / M2 / M3 / M4)
-- 約 250 MB のディスク容量
-- **スマート検出機能には以下が必要**:Chrome / Brave / Edge / Arc / Vivaldi のいずれか一つ(多くの Mac にはすでにインストール済み)。標準的な yt-dlp 対応サイトでは不要
+- **macOS** 14.0 Sonoma 以降、Apple Silicon (M1 / M2 / M3 / M4)
+- **Windows** 10 / 11、64bit
+- 約 300 MB の空き容量（AI 字幕モデルは使用時にダウンロード）
 
 ## インストール
 
-1. [Releases](https://github.com/Adam1313943/nvd-public/releases/latest) から最新版の `nvd-*.zip` をダウンロード
-2. 解凍して `nvd.app` を `/Applications` にドラッグ
-3. ダブルクリックで起動 — 初回起動時にウェルカムガイドが表示されます
+- **macOS** — [Releases](https://github.com/Adam1313943/nvd-public/releases/latest) から `nvd-*-mac-arm64.zip` をダウンロードし、解凍して `nvd.app` を `/Applications` へドラッグ。
+- **Windows** — [Releases](https://github.com/Adam1313943/nvd-public/releases/latest) から `nvd-*-setup.exe` をダウンロードしてインストーラーを実行。
 
-初回起動時に macOS Gatekeeper の「インターネットからダウンロードされた」確認が出る場合があります。「開く」をクリックしてください。
+初回起動時にようこそガイドが表示されます。初回は macOS Gatekeeper / Windows SmartScreen が警告する場合があります。「**開く**」/「**実行**」を選んでください。
 
 ## 無料版 vs Pro
 
-| 機能 | 無料版 | Pro |
-|---|---|---|
-| 1,500+ サイト対応 | ✅ | ✅ |
-| 解像度 / 字幕 / メタデータ / サムネイル埋め込み | ✅ | ✅ |
-| スマートなストリーム検出 | ✅ | ✅ |
-| ブラウザ Cookies 統合 | ✅ | ✅ |
-| メニューバー通知 | ✅ | ✅ |
-| 自動アップデート | ✅ | ✅ |
-| 動画の長さ上限 | **10 分** | 無制限 |
-| 1 回のダウンロードサイズ | **100 MB** | 無制限 |
-| クリップ範囲ダウンロード | — | ✅ |
-| アプリ内プレビュー再生 | — | ✅ |
+**無料版**には **7 日間のトライアル**が含まれます。トライアル終了後、ダウンロードと字幕の文字起こしには Pro が必要です。
 
-## Pro へのアップグレード
+| 機能 | 無料（トライアル 7 日間） | トライアル終了後 | Pro |
+|---|---|---|---|
+| ダウンロード（1,500 以上のサイト） | ✅ | Pro が必要 | ✅ 無制限 |
+| メディアライブラリ / 内蔵プレーヤー | ✅ | ✅ | ✅ |
+| AI 字幕 — 文字起こし | ✅ | Pro が必要 | ✅ 無制限 |
+| AI 字幕 — 翻訳 | Pro が必要 | Pro が必要 | ✅ 月 5 本 |
 
-- **価格**:¥ 1,500 買い切り(NT$ 380 / USD $12 相当)
-- **デバイス数**:1 ライセンスで最大 3 台の Mac でアクティベート可能(いつでも解除可能)
-- **アップデート**:1 年間のすべての機能アップデートを含む。1 年後は 50% 割引で更新可能
-- **返金**:7 日以内なら無条件返金
+## Pro へアップグレード
+
+- **価格**：US$15 買い切り
+- **デバイス数**：1 ライセンスで最大 3 台（macOS / Windows）まで有効化。いつでも解除して枠を空けられます
+- **アップデート**：1 年間の機能アップデート込み、以降は 50% off で更新可
+- **返金**：7 日間の無条件返金
 
 [**momosoft.one で Pro を購入**](https://www.momosoft.one/nvd)
 
-購入後 1 分以内にライセンスキーがメールで届きます。nvd を起動 → 設定 → ライセンス → Pro にアップグレード → 「ライセンスをお持ちの方はこちら」を選択 → メールアドレスとキーを入力してください。
+購入後 1 分以内にライセンスキーがメールで届きます。nvd → 設定 → ライセンス → Pro へアップグレード →「キーをお持ちの方はこちら」でメールとキーを入力してください。
 
 ## プライバシー
 
-nvd は完全にローカルで動作し、**テレメトリや解析は一切行いません**。サーバー通信が発生するのは以下のみ:
-1. Pro ライセンス認証時の検証
-2. Sparkle によるアップデート確認
+nvd は基本的にお使いの端末のローカルで動作します。外部への通信は次の場合のみ：
 
-完全なポリシー: [momosoft.one/Privacy.html](https://www.momosoft.one/Privacy.html)
+1. アクティベーション時のライセンス検証
+2. アップデート確認（`version.json`）
+3. 匿名の利用状況分析 — 既定でオン、「設定」でオフにできます
+4. 字幕翻訳 — 使用時のみ。字幕テキストを翻訳サービスへ送信します
 
-## 同梱されているオープンソース
+プライバシーポリシー全文：[momosoft.one/Privacy.html](https://www.momosoft.one/Privacy.html)
 
-nvd には以下のオープンソースコンポーネントがダウンロードエンジンとして同梱されています:
+## 同梱のオープンソース
+
+nvd は以下のオープンソースコンポーネントを同梱しています：
 
 - [yt-dlp](https://github.com/yt-dlp/yt-dlp) — Unlicense
 - [ffmpeg](https://ffmpeg.org/) — LGPL/GPL
-- [Sparkle](https://sparkle-project.org/) — MIT
+- [whisper.cpp](https://github.com/ggml-org/whisper.cpp) — MIT（AI 字幕の文字起こし）
+- [Deno](https://deno.com/) — MIT（一部サイト向けの JS ランタイム）
+- [Electron](https://www.electronjs.org/) / Chromium — MIT / BSD
 
 ## 著作権について
 
-nvd は yt-dlp や ffmpeg と同様、純粋な動画ダウンロードツールです。コンテンツをダウンロードする前に、合法的な権利があることをご確認ください(自作コンテンツ、適切にライセンスされたもの、フェアユース範囲内など)。
-
-著作権者の権利と各動画サイトの利用規約を尊重してください。nvd の開発者は、ユーザーがダウンロードしたコンテンツについて責任を負いません。
+nvd は yt-dlp や ffmpeg と同様、純粋な動画ダウンローダーです。ダウンロードするコンテンツについて、正当な権利（自作物、適切にライセンスされた素材、フェアユースの範囲）を有していることを確認してください。著作権者の権利と各動画サイトの利用規約を尊重してください。ユーザーがダウンロードしたコンテンツについて、nvd の作者は責任を負いません。
 
 ## サポート
 
-- **メール**:[support@momosoft.one](mailto:support@momosoft.one)
-- **Issues**:[GitHub Issues](https://github.com/Adam1313943/nvd-public/issues)
-- **変更履歴**:[CHANGELOG.md](./CHANGELOG.md)
+- **メール**：[support@momosoft.one](mailto:support@momosoft.one)
+- **不具合報告**：[Issues](https://github.com/Adam1313943/nvd-public/issues)
+- **変更履歴**：[CHANGELOG.md](./CHANGELOG.md)
 
 ---
 
