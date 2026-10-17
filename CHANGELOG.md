@@ -6,6 +6,21 @@
 
 All notable changes to this project are documented in this file.
 
+## [0.4.0] - 2026-10-17
+
+### Added
+
+- **Media library** — organize downloads and existing files into **sources** (local folders, network shares / NAS, and imports), **collections** and **playlists**, each card showing a thumbnail, duration and a resume bar; finished downloads can be added to the library in one click
+- **AI subtitles** — generate subtitles on-device with whisper, with two recognition modes — **Standard** for dialogue and **Noise suppression** for music- or noise-heavy footage — then translate them into many languages; subtitles render as a custom overlay you can resize, reposition and drag
+- **Built-in player** upgrades — playback speed (0.5–2×, remembered across videos), Picture-in-Picture, resume from where you left off, and direct playback of non-MP4 containers (mkv / avi / flv / mov / ts) via on-the-fly remux streaming
+- **Export media library** — export your library to a `.nvdlib` file to carry your sources, collections, playlists and watch progress over to the nvd iOS app; files stay where they are, only the catalog moves
+- **Open in nvd from Finder / Explorer** — double-click a local video to play it in nvd's built-in player
+
+### Improved
+
+- **Configurable simultaneous downloads** — choose how many downloads run at once; per-download connections scale down automatically to stay within a shared budget
+- **Link freshness & resume** — expired links are re-sniffed for a fresh URL before downloading, and mid-download 403s recover with refreshed cookies
+
 ## [0.3.9] - 2026-06-24
 
 ### Added
